@@ -5,6 +5,23 @@ Static site for OpenChat. No build step, no dependencies. `index.html` + `styles
 The launch film (`assets/openchat-launch.mp4`, 23 s, 1080p30) is the one made with **onetake** in
 `../onetake/cases/openchat-launch-24s/`.
 
+## Download button
+
+The APK is not committed to the repo. It lives as a GitHub **Release asset** (94 MB), and every
+download button points at the stable "latest" URL:
+
+```
+https://github.com/akshaytheflash/openchat-site/releases/latest/download/OpenChat.apk
+```
+
+The buttons are in the hero, the mobile menu, the final CTA, the footer, and the FAQ. To ship a new
+build, replace the asset on a new release (`v1.0.1`); the URL above keeps working as long as the
+release is marked **Latest**.
+
+```bash
+gh release create v1.0.1 "path/to/OpenChat.apk" --title "OpenChat 1.0.1 - Android APK" --notes "What changed"
+```
+
 ## What's on the page
 
 - Hero with the living orb (pointer parallax, respects reduced motion)

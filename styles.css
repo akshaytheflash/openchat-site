@@ -225,6 +225,7 @@ h3 { font-size: 1.15rem; line-height: 1.3; letter-spacing: -.02em; }
 .btn-ghost:hover { border-color: var(--accent-line); background: var(--accent-soft); }
 .btn-small { min-height: 36px; padding: 0 14px; font-size: 12.5px; border-radius: 11px; }
 .btn-meta { font: 10px var(--mono); color: var(--mute); margin-left: 2px; }
+.btn-primary .btn-meta { color: rgba(4, 33, 26, .58); }
 .i-ext { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 .play-glyph {
@@ -417,6 +418,14 @@ h3 { font-size: 1.15rem; line-height: 1.3; letter-spacing: -.02em; }
   color: var(--ink-2);
 }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 34px; }
+.hero-key-note { margin-top: 16px; font-size: 12.5px; color: var(--mute); }
+.hero-key-note a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-line);
+}
+.hero-key-note a:hover { color: var(--accent); }
 
 .facts {
   display: grid;
