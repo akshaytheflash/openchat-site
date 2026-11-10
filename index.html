@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenChat: a calm, mobile-first AI chat</title>
+<meta name="description" content="Bring your own free OpenRouter key. Free models, no subscription, no leash. A calm, mobile-first AI chat built with Expo.">
+<meta name="theme-color" content="#080A0D" id="theme-color">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenChat: a calm, mobile-first AI chat">
+<meta property="og:description" content="Bring your own free OpenRouter key. Free models, no subscription, no leash.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/Geist.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/GeistMono.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    try { if (localStorage.getItem('openchat-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="OpenChat, back to top">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-word" translate="no">OpenChat</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#film" data-nav="film">The film</a>
+      <a href="#how" data-nav="how">How it works</a>
+      <a href="#try" data-nav="try">Try it</a>
+      <a href="#features" data-nav="features">Features</a>
+      <a href="#no-leash" data-nav="no-leash">No leash</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-small btn-primary magnetic" href="https://openrouter.ai/sign-up" target="_blank" rel="noopener noreferrer">Get a free key<svg class="i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#film">The film</a>
+    <a href="#how">How it works</a>
+    <a href="#try">Try it</a>
+    <a href="#features">Features</a>
+    <a href="#no-leash">No leash</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-primary" href="https://openrouter.ai/sign-up" target="_blank" rel="noopener noreferrer">Get a free key</a>
+  <p class="mobile-note" translate="no">openchat.app</p>
+</div>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>A calm, mobile-first AI chat</p>
+        <h1 class="hero-title">
+          <span class="line"><span>The chat app</span></span>
+          <span class="line"><span>that doesn’t put you</span></span>
+          <span class="line"><span>on a leash<span class="dot" aria-hidden="true"></span></span></span>
+        </h1>
+        <p class="hero-sub">Bring your own free OpenRouter key. Talk to the free models for as long as the key allows. No subscription between you and the answer.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary magnetic" href="https://openrouter.ai/sign-up" target="_blank" rel="noopener noreferrer">Get your free key<svg class="i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-ghost" href="#film"><span class="play-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>Watch the film<span class="btn-meta" translate="no">0:23</span></a>
+        </div>
+        <dl class="facts">
+          <div><dt>Free models router</dt><dd>Zero-cost, every message</dd></div>
+          <div><dt>Your key</dt><dd>Stored on this device only</dd></div>
+          <div><dt>iOS + Android</dt><dd>Built with Expo</dd></div>
+        </dl>
+      </div>
+      <div class="hero-orb" data-orb aria-hidden="true">
+        <div class="orb-float">
+          <div class="orb-halo"><i></i></div>
+          <div class="orb-ring"><i></i></div>
+          <div class="orb-core"><i class="orb-glint"></i></div>
+          <div class="orb-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="film" id="film">
+    <div class="container film-grid">
+      <div class="film-copy">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>The launch film</p>
+        <h2>One take. One dot.<br>Twenty-three seconds.</h2>
+        <p class="lede">A key is typed. The card becomes the composer. The answer streams. The phone walks out of the dark. No cuts.</p>
+        <nav class="chapters" aria-label="Film chapters">
+          <button class="chapter is-active" type="button" data-seek="0" aria-current="true"><span class="ch-dot" aria-hidden="true"></span><span class="ch-name">The orb</span><span class="ch-time">0:00</span></button>
+          <button class="chapter" type="button" data-seek="1.1"><span class="ch-dot" aria-hidden="true"></span><span class="ch-name">The key</span><span class="ch-time">0:01</span></button>
+          <button class="chapter" type="button" data-seek="5.1"><span class="ch-dot" aria-hidden="true"></span><span class="ch-name">The ask</span><span class="ch-time">0:05</span></button>
+          <button class="chapter" type="button" data-seek="8.0"><span class="ch-dot" aria-hidden="true"></span><span class="ch-name">The answer</span><span class="ch-time">0:08</span></button>
+          <button class="chapter" type="button" data-seek="16.1"><span class="ch-dot" aria-hidden="true"></span><span class="ch-name">No leash</span><span class="ch-time">0:16</span></button>
+        </nav>
+        <p class="film-credit">Made with <a href="https://onetakemotion.com" target="_blank" rel="noopener noreferrer">onetake</a>. One room of sound. 4,095 captures, one continuous camera.</p>
+      </div>
+      <div class="film-frame">
+        <video id="film-video" width="1920" height="1080" poster="assets/poster.jpg" preload="metadata" playsinline>
+          <source src="assets/openchat-launch.mp4" type="video/mp4">
+          Your browser doesn’t support HTML video. <a href="assets/openchat-launch.mp4">Download the film</a>.
+        </video>
+        <button class="film-play" id="film-play" type="button" aria-label="Play the 23-second film">
+          <span class="play-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          <span class="play-label" id="film-play-label">Play the film · sound on</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="how" id="how">
+    <div class="container">
+      <header class="sec-head">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>How it works</p>
+        <h2>A free key. A minute. Then it’s just talking.</h2>
+        <p class="lede">OpenRouter gives every account a free API key with access to a family of zero-cost models. OpenChat connects it, keeps it on your device, and routes each message to a free model.</p>
+      </header>
+      <div class="how-grid">
+        <ol class="steps">
+          <li>
+            <span class="step-n" aria-hidden="true">1</span>
+            <div>
+              <h3>Create a free OpenRouter account</h3>
+              <p>Sign up with Google, GitHub, or email. No card is needed; free models run on every account.</p>
+              <a class="text-link" href="https://openrouter.ai/sign-up" target="_blank" rel="noopener noreferrer">Open sign-up<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">2</span>
+            <div>
+              <h3>Create an API key</h3>
+              <p>Go to Keys, create a key, and name it OpenChat. Copy the key that starts with <span class="mono" translate="no">sk-or-v1-</span>.</p>
+              <a class="text-link" href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">Open the key page<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">3</span>
+            <div>
+              <h3>Paste it into OpenChat</h3>
+              <p>The app checks it live with OpenRouter before saving. The key stays on this device and talks only to OpenRouter.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="connect" id="connect">
+          <form class="key-form" id="key-form" novalidate>
+            <div class="connect-top">
+              <span class="connect-label">OpenRouter key</span>
+              <span class="connect-demo"><i aria-hidden="true"></i>demo</span>
+            </div>
+            <label class="sr-only" for="key-input">OpenRouter API key</label>
+            <div class="key-row">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l3 3M14 9l2 2"/></svg>
+              <input id="key-input" name="key" type="text" placeholder="sk-or-v1-…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="key-note key-status">
+              <button class="key-demo" id="key-demo" type="button">Use a demo key</button>
+            </div>
+            <p class="key-status" id="key-status" role="status" aria-live="polite"></p>
+            <div class="key-meta"><span>Free daily requests left</span><span class="mono" translate="no">50</span></div>
+            <div class="key-trust" id="key-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span>Demo only. Nothing leaves this page. The app stores your key in Keychain or Keystore and sends it only to OpenRouter.</span>
+            </div>
+            <button class="btn btn-primary key-submit" type="submit">Connect key</button>
+            <a class="key-try" id="key-try" href="#try">Connected. Try the chat.</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="try" id="try">
+    <div class="container try-grid">
+      <div class="try-copy">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Try it</p>
+        <h2>One calm place for every question.</h2>
+        <p class="lede">This is the real interface, rebuilt in HTML. Ask the question from the film. The answer is canned; no model is called.</p>
+        <div class="try-actions">
+          <button class="btn btn-primary" id="demo-send" type="button">Send the question</button>
+          <button class="btn btn-ghost" id="demo-reset" type="button">Reset</button>
+        </div>
+        <p class="try-note">The live app streams from <span class="mono" translate="no">openrouter/free</span>, then falls back to other free models if the router can’t serve.</p>
+      </div>
+
+      <div class="phone" aria-label="OpenChat chat demo">
+        <div class="phone-screen">
+          <div class="phone-status">
+            <span class="phone-time">9:41</span>
+            <span class="phone-icons" aria-hidden="true">
+              <svg viewBox="0 0 58 12"><rect x="0" y="7" width="2.5" height="5" rx=".6"/><rect x="4" y="5" width="2.5" height="7" rx=".6"/><rect x="8" y="3" width="2.5" height="9" rx=".6"/><rect x="12" y="0" width="2.5" height="12" rx=".6"/><path d="M20 6.5c2-1.8 5-1.8 7 0M21.5 8.5c1.2-1 3-1 4.2 0M23 10.5h2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><rect x="32" y="3" width="20" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1"/><rect x="33.5" y="4.5" width="15" height="5" rx="1"/><path d="M53 5.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div class="phone-island" aria-hidden="true"></div>
+          <div class="phone-head">
+            <svg class="phone-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            <div class="phone-head-c">
+              <div class="phone-title">Quantum entanglement</div>
+              <div class="phone-sub"><i aria-hidden="true"></i>Free models router</div>
+            </div>
+            <svg class="phone-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+
+          <div class="phone-chat">
+            <div class="phone-empty" id="demo-empty">
+              <div class="mini-orb" aria-hidden="true"></div>
+              <p>What’s on your mind?</p>
+              <span>Press send to ask.</span>
+            </div>
+            <div class="demo-user" id="demo-user" hidden>Explain entanglement like I’m 12.</div>
+            <div class="demo-ai" id="demo-ai" hidden>
+              <div class="demo-ai-head">
+                <span class="demo-avatar" aria-hidden="true"><i></i></span>
+                <span class="demo-model" id="demo-model">Free Router</span>
+                <button class="demo-copy" id="demo-copy" type="button" aria-label="Copy answer" hidden>
+                  <svg class="copy-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3h-7A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15"/></svg>
+                  <svg class="check-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                </button>
+              </div>
+              <div class="demo-thinking" id="demo-thinking"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="ttext">Thinking…</span></div>
+              <p class="demo-answer" id="demo-answer" hidden></p>
+            </div>
+          </div>
+
+          <div class="phone-composer">
+            <span class="composer-text" id="demo-question">Explain entanglement like I’m 12.</span>
+            <button class="send" id="demo-send-phone" type="button" aria-label="Send the question in the demo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+            </button>
+          </div>
+          <div class="phone-meta"><span>Powered by free OpenRouter models · 2 msgs</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+          <div class="phone-home" aria-hidden="true"></div>
+          <p class="sr-only" id="demo-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare" id="no-leash">
+    <div class="container">
+      <header class="sec-head">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>No leash</p>
+        <h2>Their limit is a paywall. The free tier’s limit is a number you can see.</h2>
+      </header>
+      <div class="compare-grid">
+        <article class="compare-panel their">
+          <div class="compare-top"><span class="mono">Most AI apps</span><span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span></div>
+          <div class="meter" aria-hidden="true"><span></span></div>
+          <div class="compare-row"><span>Your plan</span><span class="mono">rented</span></div>
+          <p>You rent access. The limit changes, the upsell appears, and the model you picked can disappear behind a tier.</p>
+        </article>
+        <article class="compare-panel ours">
+          <div class="compare-top"><span class="mono">OpenChat</span><span class="open-dot" aria-hidden="true"></span></div>
+          <div class="open-line" aria-hidden="true">
+            <svg viewBox="0 0 480 56" preserveAspectRatio="none"><path pathLength="1" d="M2 30C80 30 120 16 230 16S380 30 476 30"/></svg>
+            <span class="open-end"></span>
+          </div>
+          <div class="compare-row"><span>Your key</span><span class="mono">yours</span></div>
+          <p>Your key stays on your device. The free tier’s limits are OpenRouter’s, printed below. No paywall between you and the model.</p>
+          <dl class="limits">
+            <div><dt>Per minute</dt><dd>20</dd></div>
+            <div><dt>Per day</dt><dd>50</dd></div>
+            <div><dt>After $10</dt><dd>1,000</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="compare-note">OpenRouter’s free-tier limits, not OpenChat’s. 1,000&nbsp;requests/day after a one-time $10 credit top-up on OpenRouter.</p>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="container">
+      <header class="sec-head">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Built for the free tier</p>
+        <h2>Everything you need. Nothing you rent.</h2>
+      </header>
+      <div class="feature-grid">
+        <article class="feature feature-a" data-spotlight>
+          <div class="router-art" aria-hidden="true">
+            <svg viewBox="0 0 340 160">
+              <g stroke="rgba(255,255,255,.2)" stroke-width="1">
+                <path d="M42 80L112 42L182 80L256 42M112 42L112 118M182 80L182 126M256 42L256 112M112 118L182 126M42 80L112 118"/>
+              </g>
+              <g fill="#8C949E">
+                <circle cx="42" cy="80" r="4"/><circle cx="112" cy="42" r="4"/><circle cx="112" cy="118" r="4"/>
+                <circle cx="256" cy="42" r="4"/><circle cx="256" cy="112" r="4"/><circle cx="182" cy="126" r="4"/>
+              </g>
+              <circle class="router-live" cx="182" cy="80" r="7" fill="#7CE7C8"/>
+              <circle cx="182" cy="80" r="15" fill="none" stroke="#7CE7C8" stroke-opacity=".25"/>
+            </svg>
+            <span class="router-label mono" translate="no">openrouter/free</span>
+          </div>
+          <div>
+            <h3>Free models, routed per message.</h3>
+            <p><span class="mono" translate="no">openrouter/free</span> picks a zero-cost model for each message. If it can’t serve, OpenChat tries the other free models directly.</p>
+          </div>
+        </article>
+
+        <article class="feature feature-b" data-spotlight>
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Your key stays here.</h3>
+          <p>SecureStore on iOS, Keystore on Android, localStorage on web. Sent only to OpenRouter.</p>
+        </article>
+
+        <article class="feature feature-c" data-spotlight>
+          <pre class="code-mini" aria-hidden="true"><code><span class="cm"># rename files by date</span>
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+<span class="kw">for</span> f <span class="kw">in</span> Path(<span class="str">"."</span>).iterdir():
+    f.rename(f.with_stem(f.stem + <span class="str">"-"</span> + f.stat().st_mtime))</code></pre>
+          <h3>Markdown and code.</h3>
+          <p>Headings, lists, tables, and fenced code, rendered the way the answer was written.</p>
+        </article>
+
+        <article class="feature feature-d" data-spotlight>
+          <div class="persona-wrap">
+            <div class="persona-switch" role="group" aria-label="Persona">
+              <button class="persona is-active" type="button" data-persona="balanced" aria-pressed="true">Balanced</button>
+              <button class="persona" type="button" data-persona="concise" aria-pressed="false">Concise</button>
+              <button class="persona" type="button" data-persona="creative" aria-pressed="false">Creative</button>
+              <button class="persona" type="button" data-persona="code" aria-pressed="false">Code</button>
+            </div>
+            <p class="persona-sample" id="persona-sample">Clear, friendly, all-round. The answer you’d send to a friend.</p>
+          </div>
+          <div class="persona-copy">
+            <h3>Four ways to answer.</h3>
+            <p>Balanced, concise, creative, or code. The persona is a system prompt, not a paywall.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container faq-grid">
+      <header class="sec-head">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Questions</p>
+        <h2>Honest answers.</h2>
+        <p class="lede">The app is small on purpose. Here is what it does, and what it doesn’t.</p>
+      </header>
+      <div class="faq-list">
+        <details>
+          <summary>Is OpenChat free?<span class="plus" aria-hidden="true"></span></summary>
+          <p>The app is free. The models are free models on OpenRouter, reached with your own free key. OpenRouter’s free tier allows 20&nbsp;requests/min and 50&nbsp;requests/day. After a one-time $10 credit top-up on OpenRouter, that becomes 1,000&nbsp;requests/day.</p>
+        </details>
+        <details>
+          <summary>What is an OpenRouter key?<span class="plus" aria-hidden="true"></span></summary>
+          <p>A personal API key from OpenRouter, the bridge to dozens of AI models. Every account gets one free. You create it in OpenRouter’s settings and paste it into OpenChat; the app checks it live before saving.</p>
+        </details>
+        <details>
+          <summary>Where is my key stored?<span class="plus" aria-hidden="true"></span></summary>
+          <p>On your device. SecureStore, which is Keychain on iOS and Keystore on Android, plus localStorage on web. The key is sent only to OpenRouter, never to an OpenChat server.</p>
+        </details>
+        <details>
+          <summary>What happens when the free limit runs out?<span class="plus" aria-hidden="true"></span></summary>
+          <p>The app says so in plain language. It is OpenRouter’s free-tier limit, not a paywall. Wait for the window to reset, add credit on OpenRouter for 1,000&nbsp;free requests/day, or connect another key.</p>
+        </details>
+        <details>
+          <summary>Which models does it use?<span class="plus" aria-hidden="true"></span></summary>
+          <p>By default, <span class="mono" translate="no">openrouter/free</span>, OpenRouter’s Free Models Router, which picks a zero-cost model per message. If the router can’t serve, OpenChat tries individual <span class="mono" translate="no">:free</span> models from the live catalog. You can pin a free model in Settings.</p>
+        </details>
+        <details>
+          <summary>Is there an app?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Yes. It is an Expo / React Native app for iOS and Android, with a web build for preview. The Android APK and the source live in the repo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="final" id="end">
+    <div class="final-orb" aria-hidden="true"><div class="final-halo"></div><div class="final-core"></div></div>
+    <div class="container final-inner">
+      <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Bring your own key</p>
+      <h2>No leash<span class="dot" aria-hidden="true"></span></h2>
+      <p class="lede">A free key, a family of free models, and one calm place to talk. The rest is just the conversation.</p>
+      <div class="final-cta">
+        <a class="btn btn-primary magnetic" href="https://openrouter.ai/sign-up" target="_blank" rel="noopener noreferrer">Get your free key<svg class="i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-ghost" href="#film">Watch the film</a>
+      </div>
+      <p class="final-note" translate="no">openchat.app</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="OpenChat, back to top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-word" translate="no">OpenChat</span>
+      </a>
+      <p>A calm, mobile-first AI chat. Bring your own free OpenRouter key.</p>
+    </div>
+    <nav aria-label="Footer">
+      <span class="footer-h">Explore</span>
+      <a href="#film">The film</a>
+      <a href="#how">How it works</a>
+      <a href="#try">Try it</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <nav aria-label="Elsewhere">
+      <span class="footer-h">Elsewhere</span>
+      <a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer">OpenRouter</a>
+      <!-- Replace with your repo URL after you create it. -->
+      <a href="https://github.com/akshaytheflash" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://onetakemotion.com" target="_blank" rel="noopener noreferrer">onetake</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year">2026</span> OpenChat</span>
+    <span>Built with Expo + OpenRouter. Your key stays on your device.</span>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
